@@ -29,7 +29,11 @@ local H = display.contentHeight
 
 -- Each value in the parenthesis means something.
 
-local background = display.newRect( 0, 0, W, H)  
+local background = display.newRect( 0, 0, W, H) 
+
+--Set the "anchor" (think of this as - where an object is attached to the screen) to the top right corner 
+background.anchorX = 0
+background.anchorY = 0
 
 -- What we just did was create an object called background, and set it equal to the result of calling the method (a procedure that produces an output) "newRect".
 -- The method takes some parameters, which are basically options. Confusing? Programming is a little hard to understand at first, but it gets easier with a little time.
@@ -69,14 +73,15 @@ circle2:setStrokeColor(0,0,0)
 
 local text = display.newText("Click on the green circle to win.",.5 * W ,.2 * H, native.systemFont, 20)
 
-text:setReferencePoint( display.CenterReferencePoint )
+text.anchorX = .5
+text.anchorY = .5
 
 --you can also move objects like this
 
 text.x = .5 * W 
 text.y = .2 * H
 
-text:setTextColor(0,0,0)
+text:setFillColor(0,0,0)
 
 --Uncomment (delete the "--") the alpha value below to hide the text. Give it a value between 0 and 1 to make it transparent.
 
