@@ -31,16 +31,16 @@ local H = display.contentHeight
 
 local background = display.newRect( 0, 0, W, H) 
 
+-- What we just did was create an object called background, and set it equal to the result of calling the method (a procedure that produces an output) "newRect".
+-- The method takes some parameters, which are basically options. Confusing? Programming is a little hard to understand at first, but it gets easier with a little time.
+
 --Set the "anchor" (think of this as - where an object is attached to the screen) to the top right corner 
 background.anchorX = 0
 background.anchorY = 0
 
--- What we just did was create an object called background, and set it equal to the result of calling the method (a procedure that produces an output) "newRect".
--- The method takes some parameters, which are basically options. Confusing? Programming is a little hard to understand at first, but it gets easier with a little time.
-
 --Set the color, right now it is white. 
 
-background:setFillColor( 255, 255, 255)
+background:setFillColor( 1, 1, 1)
 
 -- Try changing the numbers to choose a different color background (you must save the document for the change to take effect).
 
@@ -51,7 +51,7 @@ local circle1 = display.newCircle(W * .33 , H * .5, 20)
 
 --Color it green.
 
-circle1:setFillColor(0, 255, 0)
+circle1:setFillColor(0, 1, 0)
 
 --Give it a border.
 
@@ -65,13 +65,13 @@ circle1:setStrokeColor(0,0,0)
 
 local circle2 = display.newCircle(W * .66 , H * .5, 20)
 
-circle2:setFillColor(255, 0, 0)
+circle2:setFillColor(1, 0, 0)
 circle2.strokeWidth = 2
 circle2:setStrokeColor(0,0,0)
 
 --Create a text object that tells the player how to win, we will make this change if the player wins or loses, to display an appropriate message.
 
-local text = display.newText("Click on the green circle to win.",.5 * W ,.2 * H, native.systemFont, 20)
+local text = display.newText("Touch the green circle to win.",.5 * W ,.2 * H, native.systemFont, 20)
 
 text.anchorX = .5
 text.anchorY = .5
@@ -191,7 +191,7 @@ end
 
 -- Apply the effect to the circles on each frame, in other words, 30 times a second.
 
--- This is important. If we just apply the effect once. The computer will apply the effect as soon as it can,
+-- This is important. If we just apply the effect once. The computer will apply the effect only once, as soon as it can,
 -- which is a fraction of a second. Computers are very fast.
 
 local runtimeFunction = function( event )
@@ -211,16 +211,10 @@ Runtime:addEventListener( "enterFrame", runtimeFunction )
 circle1.alpha = 0
 circle1.alpha = 1
 
--- Say you wanted the circle to blink. You would have to use something like the transition.to() method.
+-- Say you wanted to see the circle blink. You would have to use something like the transition.to() method.
 -- http://docs.coronalabs.com/api/library/transition/index.html
 
 -- These guys will just keep bouncing around forever. No energy is lost to sound, light, warmth, ect in our imaginary world.
 -- And that's it, were done! If you want, go back and change things like the color of the circles, strength of forces, text, ect.
 -- See if you can add a new feature like score, or a title screen. Use the internet for help. Thanks for following this tutorial.
 -- We hope you had fun and learned something!
-
--- Fun Facts About eVubble Lite
-	-- eVubble Lite has over 3,500 lines of code
-	-- eVubble Lite is about 671 times bigger than this demo (in bytes, a lot of that is from the 74 images used)
-	-- Over 100 gallons of coffee were drank during the making of eVubble Lite (just kidding we didn't measure)
-	-- No animals were harmed in the making of eVubble
