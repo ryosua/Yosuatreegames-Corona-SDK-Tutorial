@@ -1,5 +1,5 @@
--- Kickstarter sample app
--- By yosuaTreeGames
+-- Yosuatreegames-Corona-SDK-Tutorial
+-- By Yosuatreegames LLC
 
 -- Ok, glad you made it this far, we will now start to get more technical. So continue reading this file to learn more.
 
